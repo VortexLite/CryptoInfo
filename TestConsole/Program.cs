@@ -3,3 +3,5 @@ var request = new HttpRequestMessage(HttpMethod.Get, "api.coincap.io/v2/assets")
 var response = await client.SendAsync(request);
 response.EnsureSuccessStatusCode();
 Console.WriteLine(await response.Content.ReadAsStringAsync());
+
+Console.ReadLine();
