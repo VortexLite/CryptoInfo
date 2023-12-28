@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoInfo", "CryptoInfo\CryptoInfo.csproj", "{01041894-8DF0-490B-B4C7-01F8F9F0F9D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoInfo", "CryptoInfo\CryptoInfo.csproj", "{01041894-8DF0-490B-B4C7-01F8F9F0F9D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{79BBAB15-1480-4316-991A-FB7000E6B460}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{8FF513D6-C3A6-47A8-84D5-6ED2E4749869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWpf", "TestWpf\TestWpf.csproj", "{B6954C64-9BA2-466E-AE8F-2E81E7B935D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,21 @@ Global
 		{01041894-8DF0-490B-B4C7-01F8F9F0F9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01041894-8DF0-490B-B4C7-01F8F9F0F9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01041894-8DF0-490B-B4C7-01F8F9F0F9D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF513D6-C3A6-47A8-84D5-6ED2E4749869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF513D6-C3A6-47A8-84D5-6ED2E4749869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF513D6-C3A6-47A8-84D5-6ED2E4749869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF513D6-C3A6-47A8-84D5-6ED2E4749869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6954C64-9BA2-466E-AE8F-2E81E7B935D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6954C64-9BA2-466E-AE8F-2E81E7B935D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6954C64-9BA2-466E-AE8F-2E81E7B935D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6954C64-9BA2-466E-AE8F-2E81E7B935D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8FF513D6-C3A6-47A8-84D5-6ED2E4749869} = {79BBAB15-1480-4316-991A-FB7000E6B460}
+		{B6954C64-9BA2-466E-AE8F-2E81E7B935D4} = {79BBAB15-1480-4316-991A-FB7000E6B460}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A69D4A8-EFC8-4F1F-BDA3-F8AF47B6A162}
