@@ -57,10 +57,13 @@
                              LostFocus="SearchTextBox_OnLostFocus"/>
                 </Grid>
             </Border>
-
         </DockPanel>
 
+        <Frame Grid.ColumnSpan="2"
+            Grid.Row="1"
+            Background="Red"/>
 
 
     </Grid>
 </Window>
+ 
