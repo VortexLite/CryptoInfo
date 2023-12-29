@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoInfo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Crypto Information" Height="750" Width="1100"
+        Background="#293143" 
+        Icon="/Views/Windows/favicon.png" 
+        WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <DockPanel HorizontalAlignment="Left" 
+                   VerticalAlignment="Center">
+            <Button Content="Топ 10" Height="42" />
+            <Button Content="Ринок" Height="42"  />
+            <Button Content="Конвернування валюти" Height="42"/>
+        </DockPanel>
+
+        <DockPanel HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" 
+                   Grid.Column="1">
+            <Button Content="Тема" Height="42"  />
+            <Button Content="Мова" Height="42"  />
+        </DockPanel>
+        
+
 
     </Grid>
 </Window>

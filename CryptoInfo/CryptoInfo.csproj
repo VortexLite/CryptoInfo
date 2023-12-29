@@ -9,11 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\Windows\favicon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Infrastucture\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome5" Version="2.1.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Windows\favicon.png" />
   </ItemGroup>
 
 </Project>
