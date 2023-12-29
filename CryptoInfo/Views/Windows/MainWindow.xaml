@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoInfo"
+        xmlns:fa5="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
         Title="Crypto Information" Height="750" Width="1100"
         Background="#293143" 
@@ -18,21 +19,47 @@
             <ColumnDefinition Width="350"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+
         <DockPanel HorizontalAlignment="Left" 
                    VerticalAlignment="Center">
             <Button Content="Топ 10" Height="42" />
-            <Button Content="Ринок" Height="42"  />
+            <Button Content="Ринок" Height="42" />
             <Button Content="Конвернування валюти" Height="42"/>
         </DockPanel>
 
-        <DockPanel HorizontalAlignment="Left" 
+        <DockPanel HorizontalAlignment="Right" 
                    VerticalAlignment="Center" 
                    Grid.Column="1">
-            <Button Content="Тема" Height="42"  />
-            <Button Content="Мова" Height="42"  />
+            <Button Height="42">
+                <fa5:ImageAwesome Icon="Regular_Moon" Foreground="#FF9BA4B6"/>
+            </Button>
+            <Button Height="42" Content="UA" Width="42"/>
+            <Border CornerRadius="10"
+                    BorderThickness="1"
+                    Background="#3c4863"
+                    Margin="10 0 10 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <fa5:FontAwesome Icon="Solid_Search"
+                                    FontSize="16"
+                                    Foreground="#9ba4b6"
+                                    VerticalAlignment="Center"
+                                    Margin="10 0 5 0"/>
+
+                    <TextBox x:Name="SearchTextBox"
+                             Grid.Column="1"
+                             Style="{DynamicResource SearchTextBox}"
+                             PreviewMouseDown="SearchTextBox_OnPreviewMouseDown"
+                             LostFocus="SearchTextBox_OnLostFocus"/>
+                </Grid>
+            </Border>
+
         </DockPanel>
-        
+
 
 
     </Grid>

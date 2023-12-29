@@ -5,7 +5,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="10"
-                            Background="DarkGray"
+                            Background="#3c4863"
                             BorderThickness="1">
                         <ContentPresenter
                             HorizontalAlignment="Center"
@@ -17,7 +17,7 @@
             </Setter.Value>
         </Setter>
         <Setter Property="Margin" Value="10 0 0 0"/>
-        
         <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="#9ba4b6"/>
     </Style>
 </ResourceDictionary>

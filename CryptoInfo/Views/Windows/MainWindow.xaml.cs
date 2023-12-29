@@ -20,5 +20,23 @@ namespace CryptoInfo
         {
             InitializeComponent();
         }
+        //Тригер на тискання по пошуку і видалення слова
+        private void SearchTextBox_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (SearchTextBox.Text == "Пошук")
+            {
+                SearchTextBox.Text = string.Empty;
+            }
+
+            SearchTextBox.Focus();
+        }
+
+        private void SearchTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
+            {
+                SearchTextBox.Text = "Пошук";
+            }
+        }
     }
 }

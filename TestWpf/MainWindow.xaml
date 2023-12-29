@@ -8,6 +8,49 @@
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <fa5:ImageAwesome Icon="Solid_AlignJustify" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" />
+        <TextBox x:Name="textBox1"
+                         Text="{Binding PhoneNumberForNewOrder}"
+                         BorderBrush="Transparent"
+                         Background="Red" Margin="0,0,515,335"/>
+
+        <fa5:ImageAwesome
+                         Icon="Solid_Search"
+                         Foreground="gray"
+                         Margin="5 0 0 0"
+                         VerticalAlignment="Top"
+                         Height="16"
+                         HorizontalAlignment="Left">
+
+            <fa5:ImageAwesome.Style>
+                <Style TargetType="{x:Type fa5:ImageAwesome}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=textBox1}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </fa5:ImageAwesome.Style>
+        </fa5:ImageAwesome>
+
+        <TextBlock
+                         Text="Search"
+                         IsHitTestVisible="False"
+                         VerticalAlignment="Top"
+                         HorizontalAlignment="Left"
+                         FontSize="14"
+                         Margin="25 0 0 0">
+
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=textBox1}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
     </Grid>
 </Window>
