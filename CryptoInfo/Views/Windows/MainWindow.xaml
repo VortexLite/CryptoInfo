@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:CryptoInfo"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
-        Title="Crypto Information" Height="750" Width="1100"
+        Title="Crypto Information" 
+        Height="750" Width="1100"
+        MinWidth="1100"
         Background="#293143" 
         Icon="/Views/Windows/favicon.png" 
         WindowStartupLocation="CenterScreen">
@@ -60,8 +62,7 @@
         </DockPanel>
 
         <Frame Grid.ColumnSpan="2"
-            Grid.Row="1"
-            Background="Red"/>
+            Grid.Row="1" Source="../Pages/Top10Crypto.xaml"/>
 
 
     </Grid>
