@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CryptoInfo.ViewModels;
 using CryptoInfo.Views.Pages;
 
 namespace CryptoInfo
@@ -29,7 +30,7 @@ namespace CryptoInfo
             {
                 SearchTextBox.Text = string.Empty;
             }
-
+            
             SearchTextBox.Focus();
         }
 

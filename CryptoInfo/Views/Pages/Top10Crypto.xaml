@@ -80,7 +80,7 @@
         <TextBlock Text="Volume 24H"
                    Grid.Column="4"/>
 
-        <TextBlock Text="Market Cap"
+        <TextBlock Text="Supply"
                    Grid.Column="5"/>
 
         <TextBlock Text="24H"
