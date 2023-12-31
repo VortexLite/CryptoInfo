@@ -5,23 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CryptoInfo.Views.Pages"
       xmlns:fa5="http://schemas.fontawesome.com/icons/"
+      xmlns:vw="clr-namespace:CryptoInfo.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1100"
       Title="Top10Crypto"
-      Background="#293143">
+      Background="#293143"
+      >
+    <Page.DataContext>
+        <vw:MainViewModel />
+    </Page.DataContext>
 
     <Grid Name="Header">
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -86,8 +82,6 @@
         <TextBlock Text="24H"
                    Grid.Column="6"/>
 
-
-
         <Line  
             Grid.ColumnSpan="10"
             X1="0" Y1="0"
@@ -100,6 +94,25 @@
             StrokeEndLineCap="Round" 
             VerticalAlignment="Top"
         />
+
+        <ListView Name="cryptoListView" 
+                  ItemsSource="{Binding Path=Data}"
+                  Grid.Row="1"
+                  Grid.ColumnSpan="10"
+                    >
+            
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding _TopCrypto}"  />
+                    <GridViewColumn DisplayMemberBinding="{Binding _Symbol}" />
+                    <GridViewColumn DisplayMemberBinding="{Binding _Price}" />
+                    <GridViewColumn DisplayMemberBinding="{Binding _MarketCap}" />
+                    <GridViewColumn DisplayMemberBinding="{Binding _Volume24H}" />
+                    <GridViewColumn DisplayMemberBinding="{Binding _Supply}" />
+                    <GridViewColumn DisplayMemberBinding="{Binding _24H}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Page>
