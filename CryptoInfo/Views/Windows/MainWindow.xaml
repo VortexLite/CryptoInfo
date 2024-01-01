@@ -10,7 +10,7 @@
         Height="750" Width="1100"
         MinWidth="1100"
         Background="#293143" 
-        Icon="/Views/Windows/favicon.png" 
+        Icon="/Views/Windows/favicon.png"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>

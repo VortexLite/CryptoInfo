@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CryptoInfo.ViewModels;
+﻿using CryptoInfo.ViewModels;
 using Newtonsoft.Json;
 
 namespace CryptoInfo.Models
@@ -39,6 +34,8 @@ namespace CryptoInfo.Models
 
         [JsonProperty("vwap24Hr")]
         public string _VWAP24Hr { get; set; }
+
+        public string _ImageSource { get; set; }
 
         [JsonProperty("data")]
         public List<CryptoData> Data { get; set; }

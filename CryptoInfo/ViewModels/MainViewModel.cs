@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.IO;
 using System.Net.Http;
 using CryptoInfo.Models;
 using Newtonsoft.Json.Linq;
@@ -17,6 +18,23 @@ namespace CryptoInfo.ViewModels
         {
             get => _data;
             set => SetField(ref _data, value);
+        }
+
+        public string GetImagePath(string nameCoin)
+        {
+            string directoryPath = "Images/Coin/";
+            string fileName = $"{nameCoin}.png";
+
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, directoryPath, fileName);
+
+            if (File.Exists(filePath))
+            {
+                return filePath;
+            }
+            else
+            {
+                return "Images/Coin/undefiend.png";
+            }
         }
 
         public async Task GetData()
@@ -42,7 +60,9 @@ namespace CryptoInfo.ViewModels
                     _Supply = token["supply"].ToString(),
                     _24H = token["changePercent24Hr"].ToString(),
                     _MaxSupply = token["maxSupply"].ToString(),
-                    _VWAP24Hr = token["vwap24Hr"].ToString()
+                    _VWAP24Hr = token["vwap24Hr"].ToString(),
+
+                    _ImageSource = GetImagePath(token["id"].ToString())
                 })
                 .ToList();
             Data = new ObservableCollection<CryptoData>(cryptoDataList);
