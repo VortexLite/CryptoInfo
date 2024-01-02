@@ -98,5 +98,6 @@ namespace CryptoInfo.ViewModels
 
             PerformSearch(string.Empty);
         }
+
     }
 }

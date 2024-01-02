@@ -20,7 +20,7 @@
         <conv:_24HConverter x:Key="ChangePercentConverter"/>
     </Page.Resources>
 
-    <Grid Name="Header">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
             <RowDefinition/>
@@ -103,7 +103,8 @@
                  ItemsSource="{Binding SearchResults}"
                  Background="Transparent"
                  BorderThickness="0"
-                 Margin="0"> 
+                 Margin="0"
+                 Name="Top10CryptoCoin"> 
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50" >

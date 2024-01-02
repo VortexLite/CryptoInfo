@@ -26,8 +26,11 @@
 
         <DockPanel HorizontalAlignment="Left" 
                    VerticalAlignment="Center">
-            <Button Content="Топ 10" Height="42" />
-            <Button Content="Ринок" Height="42" />
+            <Button Content="Топ 10" Height="42" 
+                    Click="ViewTop10Crypto"/>
+            <Button Content="Ринок" 
+                    Height="42" 
+                    Click="GetMarketData_Click"/>
             <Button Content="Конвернування валюти" Height="42" Width="220"/>
         </DockPanel>
 
@@ -68,9 +71,9 @@
         
         <Frame Grid.ColumnSpan="2" 
                Name="MainFrame"
-               Grid.Row="1"/>
+               Grid.Row="1"
+               NavigationUIVisibility="Hidden"/>
 
 
     </Grid>
 </Window>
- 
