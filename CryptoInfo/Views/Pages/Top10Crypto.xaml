@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:CryptoInfo.Views.Pages"
       xmlns:fa5="http://schemas.fontawesome.com/icons/"
       xmlns:vw="clr-namespace:CryptoInfo.ViewModels"
+      xmlns:conv="clr-namespace:CryptoInfo.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1100"
       Title="Top10Crypto"
@@ -14,7 +15,9 @@
         <vw:MainViewModel />
     </Page.DataContext>
     <Page.Resources>
-        <vw:RoundConverter x:Key="RoundConverter"/>
+        <conv:RoundConverter x:Key="RoundConverter"/>
+        <conv:MarketCapMarketVolumeSupplyConverter x:Key="MarketCapMarketVolumeSupplyConverter"/>
+        <conv:_24HConverter x:Key="ChangePercentConverter"/>
     </Page.Resources>
 
     <Grid Name="Header">
@@ -23,13 +26,13 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="100"/>
-            <ColumnDefinition MinWidth="200"/>
-            <ColumnDefinition MinWidth="200"/>
-            <ColumnDefinition MinWidth="150"/>
-            <ColumnDefinition MinWidth="150"/>
-            <ColumnDefinition MinWidth="150"/>
-            <ColumnDefinition MinWidth="150"/>
+            <ColumnDefinition MinWidth="100" />
+            <ColumnDefinition MinWidth="200" />
+            <ColumnDefinition MinWidth="200" />
+            <ColumnDefinition MinWidth="150" />
+            <ColumnDefinition MinWidth="150" />
+            <ColumnDefinition MinWidth="150" />
+            <ColumnDefinition MinWidth="150" />
         </Grid.ColumnDefinitions>
 
         <Line 
@@ -45,7 +48,7 @@
               VerticalAlignment="Top"
         />
 
-        <Grid>
+        <Grid Name="NumberCoin">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -99,22 +102,23 @@
                  Grid.ColumnSpan="7" 
                  ItemsSource="{Binding Data}"
                  Background="Transparent"
-                 BorderThickness="0"> 
+                 BorderThickness="0"
+                 Margin="0"> 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Height="50">
+                    <Grid Height="50" >
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition MinWidth="100"/>
-                            <ColumnDefinition MinWidth="200"/>
-                            <ColumnDefinition MinWidth="200"/>
-                            <ColumnDefinition MinWidth="150"/>
-                            <ColumnDefinition MinWidth="150"/>
-                            <ColumnDefinition MinWidth="150"/>
-                            <ColumnDefinition MinWidth="150"/>
+                            <ColumnDefinition MinWidth="100" />
+                            <ColumnDefinition MinWidth="200" />
+                            <ColumnDefinition MinWidth="200" />
+                            <ColumnDefinition MinWidth="150" />
+                            <ColumnDefinition MinWidth="150" />
+                            <ColumnDefinition MinWidth="150" />
+                            <ColumnDefinition MinWidth="135" />
                         </Grid.ColumnDefinitions>
                         
                         <Grid>
-                            <Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions >
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
@@ -131,7 +135,7 @@
                                              Margin="2 0 0 0"/>
                         </Grid>
 
-                        <Grid Column="1">
+                        <Grid Column="1" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition MinWidth="20"/>
                                 <ColumnDefinition/>
@@ -159,10 +163,13 @@
                         </Grid>
 
                         <TextBlock Text="{Binding _Price, Converter={StaticResource RoundConverter}}" Grid.Column="2"/>
-                        <TextBlock Text="{Binding MarketCap}" Grid.Column="3"/>
-                        <TextBlock Text="{Binding Volume24H}" Grid.Column="4"/>
-                        <TextBlock Text="{Binding Supply}" Grid.Column="5"/>
-                        <TextBlock Text="{Binding Change24H}" Grid.Column="6"/>
+
+                        <TextBlock Text="{Binding _MarketCap, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}" Grid.Column="3"/>
+
+                        <TextBlock Text="{Binding _Volume24H, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}" Grid.Column="4"/>
+
+                        <TextBlock Text="{Binding _Supply, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}" Grid.Column="5"/>
+                        <TextBlock Text="{Binding _24H, Converter={StaticResource ChangePercentConverter}}" Grid.Column="6"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

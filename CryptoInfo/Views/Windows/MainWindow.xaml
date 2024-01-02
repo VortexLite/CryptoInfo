@@ -11,14 +11,15 @@
         MinWidth="1100"
         Background="#293143" 
         Icon="/Views/Windows/favicon.png"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
@@ -26,7 +27,7 @@
                    VerticalAlignment="Center">
             <Button Content="Топ 10" Height="42" />
             <Button Content="Ринок" Height="42" />
-            <Button Content="Конвернування валюти" Height="42"/>
+            <Button Content="Конвернування валюти" Height="42" Width="220"/>
         </DockPanel>
 
         <DockPanel HorizontalAlignment="Right" 
