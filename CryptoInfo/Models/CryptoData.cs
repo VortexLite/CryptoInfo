@@ -1,5 +1,4 @@
-﻿using CryptoInfo.ViewModels;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace CryptoInfo.Models
 {

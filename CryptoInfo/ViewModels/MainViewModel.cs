@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.IO;
 using System.Net.Http;
-using System.Windows;
 using CryptoInfo.Models;
 using Newtonsoft.Json.Linq;
 
@@ -11,7 +10,7 @@ namespace CryptoInfo.ViewModels
     {
         public MainViewModel()
         {
-            GetData();
+            InitializeAsync();
         }
 
         private ObservableCollection<CryptoData> _data = new ObservableCollection<CryptoData>();
@@ -19,6 +18,30 @@ namespace CryptoInfo.ViewModels
         {
             get => _data;
             set => SetField(ref _data, value);
+        }
+
+        private ObservableCollection<CryptoData> _searchResults = new ObservableCollection<CryptoData>();
+        public ObservableCollection<CryptoData> SearchResults
+        {
+            get => _searchResults;
+            set => SetField(ref _searchResults, value);
+        }
+
+        public void PerformSearch(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                SearchResults = new ObservableCollection<CryptoData>(Data);
+            }
+            else
+            {
+                SearchResults = new ObservableCollection<CryptoData>(
+                    Data.Where(item =>
+                        item._NameCoin.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                        item._Symbol.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)
+                    )
+                );
+            }
         }
 
         public string GetImagePath(string nameCoin)
@@ -36,6 +59,11 @@ namespace CryptoInfo.ViewModels
             {
                 return "Images/Coin/undefiend.png";
             }
+        }
+
+        private async void InitializeAsync()
+        {
+            await GetData();
         }
 
         public async Task GetData()
@@ -67,6 +95,8 @@ namespace CryptoInfo.ViewModels
                 })
                 .ToList();
             Data = new ObservableCollection<CryptoData>(cryptoDataList);
+
+            PerformSearch(string.Empty);
         }
     }
 }

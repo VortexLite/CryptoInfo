@@ -100,7 +100,7 @@
         />
         <ListBox Grid.Row="1" 
                  Grid.ColumnSpan="7" 
-                 ItemsSource="{Binding Data}"
+                 ItemsSource="{Binding SearchResults}"
                  Background="Transparent"
                  BorderThickness="0"
                  Margin="0"> 
@@ -169,6 +169,7 @@
                         <TextBlock Text="{Binding _Volume24H, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}" Grid.Column="4"/>
 
                         <TextBlock Text="{Binding _Supply, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}" Grid.Column="5"/>
+
                         <TextBlock Text="{Binding _24H, Converter={StaticResource ChangePercentConverter}}" Grid.Column="6"/>
                     </Grid>
                 </DataTemplate>

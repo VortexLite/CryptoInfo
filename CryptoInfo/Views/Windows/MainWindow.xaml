@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoInfo"
+        xmlns:vw="clr-namespace:CryptoInfo.ViewModels"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
         Title="Crypto Information" 
@@ -47,23 +48,27 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <fa5:FontAwesome Icon="Solid_Search"
-                                    FontSize="16"
-                                    Foreground="#9ba4b6"
-                                    VerticalAlignment="Center"
-                                    Margin="10 0 5 0"/>
+                    <Button>
+                        <fa5:FontAwesome Icon="Solid_Search"
+                                         FontSize="16"
+                                         Foreground="#9ba4b6"
+                                         VerticalAlignment="Center"
+                                         Margin="10 0 5 0"/>
+                    </Button>
 
                     <TextBox x:Name="SearchTextBox"
                              Grid.Column="1"
                              Style="{DynamicResource SearchTextBox}"
                              PreviewMouseDown="SearchTextBox_OnPreviewMouseDown"
-                             LostFocus="SearchTextBox_OnLostFocus"/>
+                             LostFocus="SearchTextBox_OnLostFocus"
+                             />
                 </Grid>
             </Border>
         </DockPanel>
-
-        <Frame Grid.ColumnSpan="2"
-            Grid.Row="1" Source="../Pages/Top10Crypto.xaml"/>
+        
+        <Frame Grid.ColumnSpan="2" 
+               Name="MainFrame"
+               Grid.Row="1"/>
 
 
     </Grid>
