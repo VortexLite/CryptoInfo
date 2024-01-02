@@ -33,12 +33,11 @@ namespace CryptoInfo
 
         private void SearchTextBox_OnLostFocus(object sender, RoutedEventArgs e)
         {
+            mainViewModel.PerformSearch(SearchTextBox.Text);
             if (string.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
                 SearchTextBox.Text = "Пошук";
-                mainViewModel.PerformSearch(string.Empty);
             }
-            mainViewModel.PerformSearch(SearchTextBox.Text);
         }
     }
 }
