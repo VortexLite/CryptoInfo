@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using CryptoInfo.Models;
 using CryptoInfo.ViewModels;
 
 namespace CryptoInfo.Views.Pages

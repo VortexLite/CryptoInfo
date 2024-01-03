@@ -14,7 +14,7 @@ namespace CryptoInfo.Converters
                 {
                     double roundedValue = Math.Round(doubleValue, 5);
 
-                    string result = $"${roundedValue}";
+                    string result = $"$ {roundedValue}";
                     return result;
                 }
             }

@@ -9,6 +9,8 @@
                  <ResourceDictionary Source="Resources/RoundButton.xaml"/>
                  <ResourceDictionary Source="Resources/RoundedSearch.xaml"/>
                  <ResourceDictionary Source="Resources/HeaderTextBlock.xaml"/>
+                 <ResourceDictionary Source="Resources/InfoCoinHeaderTextBlock.xaml"/>
+                 <ResourceDictionary Source="Resources/InfoCoinTextBlock.xaml"/>
             </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>

@@ -5,12 +5,141 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CryptoInfo.Views.Pages"
       xmlns:vw="clr-namespace:CryptoInfo.ViewModels"
+      xmlns:converters="clr-namespace:CryptoInfo.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1100"
       Title="InfoCoin"
       Background="#293143">
+    <Page.DataContext>
+        <vw:InfoCoinViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <converters:RoundConverter x:Key="RoundConverter"/>
+        <converters:MarketCapMarketVolumeSupplyConverter x:Key="MarketCapMarketVolumeSupplyConverter"/>
+        <converters:_24HConverter x:Key="ChangePercentConverter"/>
+    </Page.Resources>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="{Binding Data[0]._ImageSource}"
+                   Grid.RowSpan="2" 
+                   HorizontalAlignment="Right" 
+                   VerticalAlignment="Center"
+                   Width="130"
+                   Margin="0 0 20 0"/>
+
+            <TextBlock Grid.Column="1"
+                       Style="{DynamicResource InfoCoinHeaderTextBox}"
+                       Text="{Binding Data[0]._NameCoin}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"/>
+            <TextBlock Grid.Column="1"
+                       Grid.Row="1"
+                       Style="{DynamicResource InfoCoinTextBox}"
+                       Text="{Binding Data[0]._Symbol}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                       Text="Price"
+                       Style="{DynamicResource InfoCoinHeaderTextBox}"/>
+            <TextBlock Grid.Row="1"
+                       Text="{Binding Data[0]._Price, Converter={StaticResource RoundConverter}}"
+                       FontSize="40"
+                       FontWeight="Normal"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="1"
+                Text="MarketCap"
+                Style="{DynamicResource InfoCoinHeaderTextBox}"/>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Style="{DynamicResource InfoCoinTextBox}"
+                       Text="{Binding Data[0]._MarketCap, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}"/>
+
+            <TextBlock Grid.Column="2"
+                       Style="{DynamicResource InfoCoinHeaderTextBox}"
+                       Text="Volume 24H"/>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="2"
+                       Style="{DynamicResource InfoCoinTextBox}"
+                       Text="{Binding Data[0]._Volume24H, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Style="{DynamicResource InfoCoinHeaderTextBox}"
+                       Text="Supply"
+                       FontSize="40"/>
+            <TextBlock Grid.Row="1"
+                       Style="{DynamicResource InfoCoinTextBox}"
+                       Text="{Binding Data[0]._Supply, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}"/>
+
+            <TextBlock Grid.Column="1"
+                       Style="{DynamicResource InfoCoinHeaderTextBox}"
+                       Text="MaxSupply"
+                       FontSize="40"/>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Style="{DynamicResource InfoCoinTextBox}"
+                       Text="{Binding Data[0]._MaxSupply, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}"/>
+
+            <TextBlock Grid.Column="2"
+                       Style="{DynamicResource InfoCoinHeaderTextBox}"
+                       Text="VWAP 24H"
+                       FontSize="40"/>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="2"
+                       Style="{DynamicResource InfoCoinTextBox}"
+                       Text="{Binding Data[0]._VWAP24Hr, Converter={StaticResource RoundConverter}}"/>
+
+            <TextBlock Grid.Column="3"
+                       Style="{DynamicResource InfoCoinHeaderTextBox}"
+                       Text="24H"
+                       FontSize="40"/>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="3"
+                       Style="{DynamicResource InfoCoinTextBox}"
+                       Text="{Binding Data[0]._24H, Converter={StaticResource MarketCapMarketVolumeSupplyConverter}}"/>
+        </Grid>
     </Grid>
 </Page>

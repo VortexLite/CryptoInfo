@@ -2,7 +2,6 @@
 using Newtonsoft.Json.Linq;
 using System.Collections.ObjectModel;
 using System.Net.Http;
-using CryptoInfo.Views.Pages;
 
 namespace CryptoInfo.ViewModels
 {
@@ -42,7 +41,6 @@ namespace CryptoInfo.ViewModels
                 })
                 .ToList();
             Data = new ObservableCollection<MarketData>(MarketDataList);
-            
         }
     }
 }
