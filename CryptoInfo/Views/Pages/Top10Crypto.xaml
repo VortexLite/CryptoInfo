@@ -104,7 +104,8 @@
                  Background="Transparent"
                  BorderThickness="0"
                  Margin="0"
-                 Name="Top10CryptoCoin"> 
+                 Name="Top10CryptoCoin"
+                 MouseDoubleClick="Top10CryptoCoin_OnMouseDoubleClick"> 
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50" >

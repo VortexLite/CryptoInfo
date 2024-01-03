@@ -8,11 +8,6 @@ namespace CryptoInfo.ViewModels
 {
     public class InfoCoinViewModel : BaseViewModel
     {
-        public InfoCoinViewModel()
-        {
-            GetData("bitcoin");
-        }
-
         private ObservableCollection<CryptoData> _data = new ObservableCollection<CryptoData>();
         public ObservableCollection<CryptoData> Data
         {

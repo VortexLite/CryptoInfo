@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using CryptoInfo.Models;
 using CryptoInfo.ViewModels;
@@ -20,6 +21,11 @@ namespace CryptoInfo
             DataContext = mainViewModel;
             top10CryptoPage = new Top10Crypto(mainViewModel);
             MainFrame.Content = top10CryptoPage;
+        }
+
+        public static Frame GetMainFrame()
+        {
+            return ((MainWindow)Application.Current.MainWindow).MainFrame;
         }
         //Тригер на тискання по пошуку і видалення слова
         private void SearchTextBox_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)
